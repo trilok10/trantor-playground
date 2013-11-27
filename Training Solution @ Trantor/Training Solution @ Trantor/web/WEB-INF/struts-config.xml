@@ -7,6 +7,8 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="InductionFeedBackForm" type="formbean.InductionFeedBackForm"/>
+        <form-bean name="TraingFeedBackForm" type="formbean.TraingFeedBackForm"/>
     
     </form-beans>
     
@@ -29,6 +31,18 @@
         <action path="/Retrieve_Trainings" type="controller.Retrieve_Trainings">
             <forward name="success" path="/TrainingList.jsp"/>
         </action> 
+        
+<action input="/inductionFeedBackForm.jsp" 
+                name="InductionFeedBackForm"
+                path="/InductionFeedBackAction" 
+                scope="request" 
+                type="controller.InductionFeedBackAction"/>
+        <action input="/welcomeStruts.jsp" 
+                name="TraingFeedBackForm"
+                path="/TrainingFeedBackAction" 
+                scope="request" 
+                type="controller.TrainingFeedBackAction"/>        
+        
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
         
     </action-mappings>
